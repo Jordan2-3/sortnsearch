@@ -1,0 +1,320 @@
+import java.util.*; // Import statement to use scanner class
+import java.io.*;// wildcard
+
+public class NoblesJ_4118_P3
+{
+   public static void main(String[] args)throws IOException
+   {
+     System.out.println("I, Jordan section 152-02, did not receive any assistant"
+                        + "from anyone other than Dr. Boonthum-Denecke for Spring 2020.”");
+     Scanner keyboard = new Scanner (System.in); 
+     
+     File myFile = new File ( "myIntegerData.txt");// use File class and the Scanner class to read data from a file
+     Scanner inputFile = new Scanner(myFile); // creates a scanner object for inputFile
+    
+     int count = inputFile.nextInt(); // reads data from input file 
+     int [] jan_myUnsortedIntegers = new int [count];
+     
+     for (int i = 0;i<count;i++) 
+    	 jan_myUnsortedIntegers[i]=inputFile.nextInt();                
+           
+              
+           
+    int jan_mySortedIntegers1 []= new int[count];  
+    for ( int i = 0; i < jan_myUnsortedIntegers.length; i++)
+        {
+          jan_mySortedIntegers1[i]= jan_myUnsortedIntegers[i];
+        }
+    System.out.println("before sorted: ");
+    for (int value : jan_mySortedIntegers1)
+         System.out.print(value + " ");
+
+    NoblesJ_sortNsearch.IntInsertionSort_4118_jan(jan_mySortedIntegers1);
+  
+    System.out.println(" \nThe sorted array from Insertion sort is: ");
+   
+   for (int value : jan_mySortedIntegers1)
+         System.out.print(value + " ");
+ 
+  // althrogitm efficency is O(N^2)
+  
+  int jan_mySortedIntegers2 []= new int[count];  ;
+  for ( int i = 0; i < jan_myUnsortedIntegers.length; i++)
+        {
+         jan_mySortedIntegers2[i]=jan_myUnsortedIntegers[i];
+        }
+  System.out.println("\nbefore sorted: " );
+  for (int value : jan_mySortedIntegers2)
+      System.out.print(value + " ");
+  NoblesJ_sortNsearch.IntSelectionSort_4118(jan_mySortedIntegers2); 
+
+  System.out.println("\nThe sorted array from Selection sort is ");
+  for (int value : jan_mySortedIntegers2)
+      System.out.print(value + " ");
+    // althrogitm efficency is O(N^2)
+  
+  int [] jan_mySortedIntegers3 = new int [count];
+  for ( int i = 0; i < jan_myUnsortedIntegers.length; i++)
+        {
+         jan_mySortedIntegers3[i]=jan_myUnsortedIntegers[i];
+        }
+
+ System.out.println("\nbefore sorted:");
+  
+  for (int value : jan_mySortedIntegers3)
+      System.out.print(value + " ");
+      
+  NoblesJ_sortNsearch.IntBubbleSort_jan(jan_mySortedIntegers3);
+
+  System.out.println();
+  System.out.println("The sorted array from Bubble sort is ");
+// althrogitm efficency is O(N^2)
+
+    
+  for (int value : jan_mySortedIntegers3)
+      System.out.print(value + " ");
+  
+     
+   
+  System.out.println( "\n\nwhat search algorithm do you choose? \noption A. Sequential Search \noption B.Binary Search"); 
+  String option = keyboard.next();
+     
+    
+    
+     String response   ;
+      
+      do 
+      {
+        if (option.equalsIgnoreCase( "A") )
+          {
+            System.out.println("the list of the arrays are " );
+             System.out.print("array 1:   ");
+             for (int value : jan_myUnsortedIntegers)
+             System.out.print(value + " "); 
+             System.out.print("\narray 2:  ");
+      
+             for (int value : jan_mySortedIntegers1)
+             System.out.print(value + " "); 
+             System.out.print("\narray 3:  ");
+             
+             
+             for (int value : jan_mySortedIntegers2)
+             System.out.print(value + " "); 
+             System.out.print("\narray 4:  ");
+            
+             
+             for (int value : jan_mySortedIntegers3)
+             System.out.print(value + " ");
+             System.out.println();
+
+             System.out.println("What array do you want to pick: 1, 2, 3, or 4?");
+             int array = keyboard.nextInt();
+             
+             if( array == 1)
+             {
+        
+             System.out.println( " enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntSequentialSearch_jan(jan_myUnsortedIntegers, value);
+             
+             }
+             
+             if( array == 2)
+             {
+        
+             System.out.println( " enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntSequentialSearch_jan(jan_mySortedIntegers1, value);
+             
+             }
+             
+              if( array == 3)
+             {
+        
+             System.out.println( " enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntSequentialSearch_jan(jan_mySortedIntegers2, value);
+             
+             }
+             
+              if( array == 4)
+             {
+        
+             System.out.println( " enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntSequentialSearch_jan(jan_mySortedIntegers3, value);
+             
+             }
+
+     
+      }
+      
+      if (option.equalsIgnoreCase( "b")  )
+      {
+      System.out.print("\narray 1:  ");
+
+      for (int value : jan_mySortedIntegers1)
+             System.out.print(value + " "); 
+             
+             System.out.print("\narray 2:  ");
+             
+             
+             for (int value : jan_mySortedIntegers2)
+             System.out.print(value + " "); 
+             System.out.print("\narray 3:  ");
+                          
+             for (int value : jan_mySortedIntegers3)
+             System.out.print(value + " ");
+             System.out.println("\n");
+
+             System.out.println("What array do you want to pick: 1, 2, or 3?");
+             
+             int array = keyboard.nextInt();
+
+              if( array == 1)
+             {
+        
+             System.out.println( "enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntBinarySearch_4118(jan_mySortedIntegers1, value);
+             
+             }
+             
+              if( array == 2)
+             {
+        
+             System.out.println( "enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntBinarySearch_4118(jan_mySortedIntegers2, value);
+             
+             }
+             
+              if( array == 3)
+             {
+        
+             System.out.println( "enter a target value");
+             int value = keyboard.nextInt();            
+             NoblesJ_sortNsearch.IntBinarySearch_4118(jan_mySortedIntegers3, value);
+             
+             }
+
+             
+             
+                          
+             
+      }
+
+     
+      System.out.println("Do want to search again [Yes or No]?"); // if yes then the do while statement runs again
+      response = keyboard.next();  
+      
+      
+      
+      
+
+      }
+      while (response.equalsIgnoreCase("yes") || response.equals('Y') || response.equals('y')) ;
+     
+    
+    
+         
+          
+     int [] $4118_UnfilledArray  = new int [count*2];    // Doubles the index  
+          for ( int i = 0; i < jan_myUnsortedIntegers.length; i++)
+        {
+         $4118_UnfilledArray[i] = jan_myUnsortedIntegers[i];
+          int jan_count =0; jan_count++;
+         }
+         
+     for ( int val :$4118_UnfilledArray)
+        {
+        int J = 0; 
+        J++;
+
+          System.out.print(val + " "); 
+          
+           if (J==10 || J== 20 || J==30)
+            System.out.println(  "\n"); 
+        }
+        System.out.println();
+     for (int vals:  $4118_UnfilledArray)
+         {
+         if (vals>0) // has the array only print the filled elements
+          System.out.print(vals + " "); 
+           int J = 0; J++;
+          if (J==5 || J== 10 || J==15)
+            System.out.print("\n"); 
+          }
+           int jan_count=20;   
+         System.out.println( "\nenter in a integers ");         
+         int value1  = keyboard.nextInt();
+         $4118_UnfilledArray [jan_count-1] = value1;
+         jan_count++;
+         
+         System.out.println( "enter in another integer");
+         int value2 = keyboard.nextInt();
+         $4118_UnfilledArray [jan_count-1] = value2;  
+         jan_count++;
+         
+         System.out.println( "enter in another integer");
+         int value3 = keyboard.nextInt();
+         $4118_UnfilledArray [jan_count-1] = value3;
+         jan_count++;
+         
+         System.out.println( "enter in another integer");
+         int value4 = keyboard.nextInt();
+         $4118_UnfilledArray [jan_count-1] = value4;
+         jan_count++;
+         
+         System.out.println("here is a printed array of the filled elements:");
+         for (int values :  $4118_UnfilledArray)
+         {
+         if (values>0)
+          System.out.print(values + " ");
+         }
+         System.out.println();
+
+                  
+         for (int values :  $4118_UnfilledArray)
+         {
+         
+          System.out.print(values + " " );
+         }
+
+
+     
+          System.out.println("\n\nwhat is the location of an element that you want to delete?");
+      int delete= keyboard.nextInt();
+      
+      if (delete < 0 || delete > $4118_UnfilledArray.length)
+         {
+         System.out.println(" re enter because value is a negative value or outside of the array that have value");
+          delete= keyboard.nextInt();
+         }
+
+      System.out.print("The element that got deleted is " );   
+      System.out.println( $4118_UnfilledArray[delete] );
+      
+      int counter =0;
+      for(int value:  $4118_UnfilledArray)
+       {
+       if (value >0)
+       {
+        System.out.print(value + " ");
+        counter++;
+       }
+
+       }
+
+      System.out.println("\n" +counter + " elements are filled"); 
+      
+    System.out.println("\nThis program is completed by Jordan Nobles, Computer Engineering, 00444118 and "
+                           + "I am currently in Raleigh,NC during our COVID-19 emergency.");
+/* =================================================================
+* CSC 152 Program Assignment 3 – Array, Searching, Sorting, 
+* Semester: Spring 2020 - 02
+* This file [NoblesJ_4118_P3.java] is created by [Jordan Nobles], [00444118]
+ ================================================================== */
+   
+   }
+ }
