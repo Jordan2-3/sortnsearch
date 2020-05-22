@@ -1,0 +1,139 @@
+public class NoblesJ_sortNsearch
+{  
+   /*methods
+   Each methods has getter methods to return the value 
+   to the caller program and setter methods to change the 
+   value of the attribute;*/
+     
+   public static int IntSequentialSearch_jan(int array[], int value)
+
+   {
+      int position = -1;
+      boolean found = false;
+      int index = 0; 
+      
+      while (!found && index < array.length)
+      {
+         if( array[index] == value) // value is what is being serch 
+         {
+            found = true;
+            position = index;
+            System.out.println("Your value of" + value + "was found in the array at index " + position + ".");
+            
+         }
+         index++;
+      }
+      return position;
+     
+    }
+        
+   
+   public static int IntBinarySearch_4118(int sorted[], int value) 
+   {
+      int lower =0, upper = sorted.length-1;
+      int position = -1;
+      boolean found;// flag
+      found = false;
+      
+      while (!found  && lower <= upper)
+      {
+         int middle = (lower + upper)/2;
+            if ( sorted [middle] ==value)
+            {
+            found = true; 
+            position = middle;
+            }
+            else if (sorted [middle] > value)
+            {
+            upper = middle-1;
+            }
+            else
+            {
+            lower = middle + 1;
+            }
+            System.out.println("Your value of " + value + " was found in the array at index " + position + ".");
+            }
+         return position;
+
+   }
+      
+         public static void IntBubbleSort_jan (int bubble[]) 
+   {
+     for (int last = bubble.length-1; last >= 1; last --)
+         {
+         // Move the largest entry in A[0…last] to A[last]
+         for (int index = 0; index <= last-1; index++)
+            {     
+         //swap adjacent elements if necessary
+         if (bubble[index] > bubble[index+1])
+            {
+            int temp = bubble[index]; 
+            bubble[index] = bubble[index+1];
+            bubble[index + 1] = temp;
+            }
+            }
+           }
+                              
+    }
+   
+   public static void  IntSelectionSort_4118(int selection [])  
+   {
+     int startScan; // Starting position of the scan
+     int index;     // To hold a subscript value
+     int minIndex;  // Element with smallest value in the scan
+     int minValue;  // The smallest value found in the scan
+
+       for (startScan = 0; startScan < (selection.length-1); startScan++)
+       {
+          minIndex = startScan;
+          minValue = selection[startScan];
+
+          for(index = startScan + 1; index < selection.length; index++)
+          {
+   
+             if (selection[index] < minValue)
+             {
+                minValue = selection[index];
+                minIndex = index;
+             }  
+          } 
+          // Swap the element with the smallest value
+          // with the first element in the scannable area.
+          selection[minIndex] = selection[startScan];
+          selection[startScan] = minValue;
+        } 
+        
+     } 
+      
+   public static void IntInsertionSort_4118_jan (int insertion [])
+   {
+      int unsortedValue;  // The first unsorted value
+      int scan=0;           // Used to scan the array
+       
+      for (int index = 1; index < insertion.length; index++)
+      {
+          unsortedValue = insertion[index];
+          scan = index;
+          
+          // Move the first element in the still unsorted part
+          // into its proper position within the sorted part.
+          while (scan > 0 && insertion[scan - 1] > unsortedValue)
+          {
+             insertion[scan] = insertion[scan-1];
+             scan--;
+          } 
+          // Insert the unsorted value in its proper position
+          // within the sorted part.
+          insertion[scan] = unsortedValue;
+        } 
+        
+    } 
+       
+      
+ /* =================================================================
+* CSC 152 Program Assignment 3 – Inheritance, Spring 2020 -  Array, Searching, Sorting, 
+* Semester: Spring 2020 - 02
+* This file [NoblesJ_sortNsearch.java] is created by [Jordan Nobles], [00444118]
+ ================================================================== */
+
+   }
